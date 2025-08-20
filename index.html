@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Saulito - Tu Tutor de Matemáticas</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <!-- KaTeX for beautiful math rendering -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" xintegrity="sha384-n8MVd4RsNIU0KOVEMVIhbGKLCePo2reqvC1S+kQufeVpBOHABAUSo/NAMR3S+YkL" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js" xintegrity="sha384-XjKyOOlGwcjNTAIQHIpgOno0Hl1YQqzUOEleOLALmuqehneUG+vnGctmUb0ZY0l8" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js" xintegrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"></script>
+
+    
+</head>
+<body class="bg-slate-200 flex items-center justify-center min-h-screen">
+    <div class="w-full max-w-3xl h-[95vh] flex flex-col bg-white rounded-2xl shadow-2xl m-4">
+        <!-- Header -->
+        <header class="bg-gradient-to-r from-indigo-600 to-blue-500 text-white p-4 rounded-t-2xl shadow-lg flex items-center justify-between">
+            <div class="flex items-center">
+                <div class="bg-white/30 rounded-full p-2 mr-4">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-white"><rect width="16" height="20" x="4" y="2" rx="2"/><line x1="8" x2="16" y1="6" y2="6"/><line x1="16" x2="16" y1="14" y2="18"/><line x1="16" x2="12" y1="14" y2="14"/><line x1="12" x2="12" y1="14" y2="18"/><line x1="8" x2="8" y1="14" y2="18"/></svg>
+                </div>
+                <div>
+                    <h1 class="text-2xl font-bold">Saulito</h1>
+                    <p class="text-sm opacity-90">Tu asistente matemático IA</p>
+                </div>
+            </div>
+            <button id="clear-chat" class="p-2 rounded-full hover:bg-white/20 transition-colors" title="Limpiar chat">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path><line x1="10" y1="11" x2="10" y2="17"></line><line x1="14" y1="11" x2="14" y2="17"></line></svg>
+            </button>
+        </header>
+
+        <!-- Chat Container -->
+        <main id="chat-container" class="flex-1 p-6 overflow-y-auto space-y-6 bg-slate-50">
+            <!-- Messages will be appended here -->
+        </main>
+
+        <!-- Typing Indicator -->
+        <div id="typing-indicator" class="hidden px-6 pb-2 bg-slate-50">
+            <div class="flex items-center space-x-2">
+                <div class="w-2 h-2 bg-slate-400 rounded-full animate-bounce" style="animation-delay: -0.3s;"></div>
+                <div class="w-2 h-2 bg-slate-400 rounded-full animate-bounce" style="animation-delay: -0.15s;"></div>
+                <div class="w-2 h-2 bg-slate-400 rounded-full animate-bounce"></div>
+                <span class="text-sm text-slate-500">Saulito está escribiendo...</span>
+            </div>
+        </div>
+        
+        <!-- Input Area -->
+        <footer class="p-4 bg-white border-t border-slate-200 rounded-b-2xl">
+            <div id="math-buttons" class="flex flex-wrap gap-2 mb-3">
+                <!-- Symbols will be injected here by JS -->
+            </div>
+            <div class="flex items-center space-x-3">
+                <input type="text" id="userInput" placeholder="Escribe tu pregunta de matemáticas..." class="flex-1 p-3 border border-slate-300 rounded-xl focus:ring-2 focus:ring-indigo-500 focus:outline-none transition w-full">
+                <button id="sendButton" class="bg-indigo-600 text-white p-3 rounded-xl hover:bg-indigo-700 active:bg-indigo-800 transition-colors shadow-md disabled:bg-slate-400 disabled:cursor-not-allowed flex-shrink-0">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"></path>
+                    </svg>
+                    <span class="sr-only">Enviar</span>
+                </button>
+            </div>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

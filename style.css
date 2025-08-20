@@ -1,0 +1,26 @@
+  body {
+            font-family: 'Inter', sans-serif;
+        }
+        #chat-container::-webkit-scrollbar {
+            width: 6px;
+        }
+        #chat-container::-webkit-scrollbar-track {
+            background: #f1f5f9;
+        }
+        #chat-container::-webkit-scrollbar-thumb {
+            background: #94a3b8;
+            border-radius: 3px;
+        }
+        #chat-container::-webkit-scrollbar-thumb:hover {
+            background: #475569;
+        }
+        .katex-display {
+            margin: 0.5em 0;
+        }
+        .visual-container canvas {
+            width: 100%;
+            max-width: 400px; /* Limit max size */
+            height: auto;
+            aspect-ratio: 1 / 1; /* Keep it square */
+            margin-inline: auto;
+        }
